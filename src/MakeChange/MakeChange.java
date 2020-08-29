@@ -34,13 +34,48 @@ public class MakeChange {
 		else {
 			System.out.println("Perfect! Let me get your change!");
 			
-			double change=pay-item;
+			double total=(pay-item)*100;
+			int change=(int)total;
 		while (change>0) {
-			if (change% 20==0) {
-				double twenty = change/20;
-				int twentyInt=(int)twenty;
-				System.out.printf(twentyInt+"Twenty dollar bills,");
-				change=change-(twenty*20);
+			if (change% 2000>=0) {
+				int twenty = change/2000;
+				System.out.printf(twenty+" Twenty dollar bills,");
+				change=change-twenty;
+			}
+			if(change% 1000<=0) {
+				int ten = change/1000;
+				System.out.printf(ten+" Ten dollar bills,");
+				change=change-ten;
+			}
+			if(change% 500>=0) {
+				int five = change/500;
+				System.out.printf(five+" Five dollar bills,");
+				change=change-five;
+			}
+			if(change% 100>=0) {
+				int one = change/100;
+				System.out.printf(one+" Ten dollar bills,");
+				change=change-one;
+			}
+			if(change% 25>=0) {
+				int quarter = change/25;
+				System.out.printf(quarter+" quarters,");
+				change=change-quarter;
+			}
+			if(change% 10>=0) {
+				int dime = change/10;
+				System.out.printf(dime+" dimes,");
+				change=change-dime;
+			}
+			if(change% 5>=0) {
+				int nickle = change/5;
+				System.out.printf(nickle+" nickles,");
+				change=change-nickle;
+			}
+			if(change% 1>=0) {
+				int penny = change/1;
+				System.out.printf(penny+" pennies.");
+				change=change-penny;
 				break;
 			}
 			 
