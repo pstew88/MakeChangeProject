@@ -34,8 +34,23 @@ public class MakeChange {
 		else {
 			System.out.println("Perfect! Let me get your change!");
 			
+			double change=pay-item;
+		while (change>0) {
+			if (change% 20==0) {
+				double twenty = change/20;
+				int twentyInt=(int)twenty;
+				System.out.printf(twentyInt+"Twenty dollar bills,");
+				change=change-(twenty*20);
+				break;
+			}
+			 
+			
 		}
+			
+	
 		
 		kb.close();
 	}
+		
+}
 }
